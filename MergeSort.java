@@ -15,17 +15,12 @@ public class MergeSort {
 	}
 	
 	public static int[] sort(int[] arr, int start, int end) {
-		
-		if((end+start)/2 == 0){
-			int[] n = {arr[0]};
+		int m = (end+start)/2;
+		if(end == start){
+			int[] n = {arr[start]};
 			return n;
 		}
-		if((end+start)/2 == end) {
-			int[] m = {arr[end]};
-			return m;
-		}
-		int m = (end+start)/2;
-		int[] a1 = sort(arr, 0, m);
+		int[] a1 = sort(arr, start, m);
 		int[] a2 = sort(arr, m+1, end);
 		return mergeArray(a1, a2);
 	}
