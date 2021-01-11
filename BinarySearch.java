@@ -6,8 +6,8 @@ public class BinarySearch {
 		int number = Integer.valueOf(buffer.readLine());
 		String[] stringArr = buffer.readLine().split(" ");
 		int[] arr = new int[stringArr.length];
-		for(String s : stringArr) {
-			arr[0] = Integer.valueOf(s);
+		for(int i=0; i< stringArr.length; i++) {
+			arr[i] = Integer.valueOf(stringArr[i]);
 		}
 		int index = search(number, arr, 0, arr.length-1);
 		System.out.println(index);
@@ -22,17 +22,19 @@ public class BinarySearch {
 		System.out.println(m);
 
 		System.out.println(number);
+		System.out.println(arr[m]);
+		System.out.println(arr[m]==number);
 		if(arr[m] == number) {
 			return m;
 		}
 		if(arr[m] > number) {
 			System.out.println("start"+String.valueOf(start) + "end"+ String.valueOf(m-1));
-			search(number, arr, start, m-1);
+		 	return search(number, arr, start, m-1);
 		}
 		if(arr[m] < number) {
 
 			System.out.println("start"+String.valueOf(m+1) + "end"+ String.valueOf(end));
-			search(number, arr, m+1, end);
+			return search(number, arr, m+1, end);
 		}
 		return -1;
 	}
