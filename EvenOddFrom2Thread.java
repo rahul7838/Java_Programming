@@ -8,7 +8,7 @@ public class EvenOddFrom2Thread {
 			System.out.println(j);
 			j = j+2;
 			notify();
-			if(j < 9)wait();
+			if(j < 10)wait();
 		}
 	}
 
