@@ -16,18 +16,15 @@ public class CountFreq {
 				int a = arr[i];
 			    int b = arr[a-1];
 			 	
-				if(arr[a-1] < 0) {
+				if(arr[a-1] <= 0) {
 					arr[i] = 0;
 					arr[a-1] = arr[a-1] -1;
 					i++;
 				} else {
-					if(arr[i] == arr[a-1] && i != a-1) {
-						arr[i] = 0;
-						arr[a-1] = -2;
-					} else {
+					
 						arr[i] = b;
 						arr[a-1] = -1;
-					}
+					
 				}			
 			}
 		}
