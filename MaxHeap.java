@@ -63,4 +63,19 @@ public class MaxHeap {
 		}
 		return arr;
 	}
+
+	// priority queue
+
+	public int maximum(int[] arr) {
+		buildHeap(arr);
+		return arr[0];
+	}
+
+	public int extractMax() {
+		
+	}
+
+	public void insert() {
+
+	}
 }
